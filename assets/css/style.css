@@ -2199,7 +2199,7 @@ ul, ol {
 .pre-footer-cta {
   background-color: var(--color-teal);
   color: var(--color-cream);
-  padding: clamp(5rem, 9vw, 9rem) 0;
+  padding: 0;
   position: relative;
   overflow: hidden;
   text-align: center;
@@ -2207,12 +2207,8 @@ ul, ol {
 
 .pre-footer-dawn-glow {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: min(1000px, 95vw);
-  height: 380px;
-  background: radial-gradient(circle, rgba(240, 237, 204, 0.14) 0%, rgba(2, 52, 63, 0) 70%);
+  inset: 0;
+  background: radial-gradient(ellipse at center, rgba(240, 237, 204, 0.14) 0%, rgba(2, 52, 63, 0) 70%);
   pointer-events: none;
   z-index: 1;
 }
@@ -2232,6 +2228,7 @@ ul, ol {
 .pre-footer-content {
   position: relative;
   z-index: 3;
+  padding-block: 5rem;
   max-width: 760px;
   margin-left: auto;
   margin-right: auto;
@@ -2421,3 +2418,5 @@ ul, ol {
     transform: none !important;
   }
 }
+/* Keep the cream home navigation legible above the light journal canvas. */
+.blog-page .site-header { background: var(--color-teal); }
