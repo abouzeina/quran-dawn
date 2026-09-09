@@ -1,0 +1,24 @@
+﻿/* The brand concept: an open Quran becomes the first light of dawn. */
+.hero-section .hero-layout { display: grid; grid-template-columns: minmax(0, .95fr) minmax(0, 1.2fr); align-items: center; gap: clamp(28px, 4vw, 64px); position: relative; z-index: 4; }
+.hero-dawn-art { width: 100%; max-width: 530px; justify-self: center; }
+.hero-dawn-art > svg { width: 100%; height: auto; overflow: visible; }
+.hero-layout .hero-content { min-width: 0; }
+.hero-layout .hero-title { font-size: clamp(2.6rem, 4.1vw, 4.25rem); }
+.hero-layout .hero-lead { font-size: 17px; }
+.hero-layout .hero-actions { margin-bottom: 28px; gap: 12px; }
+.hero-layout .hero-actions .btn { padding-inline: 22px; font-size: 13px; }
+.hero-section:has(.hero-layout) .hero-brand-backdrop { display: none; }
+.dawn-art-book { animation: dawn-book-reveal 1.8s ease-out both; }
+.dawn-art-sun { animation: dawn-sun-reveal 2.8s .4s ease-out both; }
+.dawn-art-glow { animation: dawn-glow-reveal 3.5s ease-out both; }
+.dawn-art-spark { animation: dawn-glow-reveal 2s 1.5s ease-out both; }
+@keyframes dawn-book-reveal { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes dawn-sun-reveal { from { opacity: 0; transform: translateY(45px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes dawn-glow-reveal { from { opacity: 0; } to { opacity: 1; } }
+@media(max-width: 900px) {
+ .hero-section .hero-layout { grid-template-columns: minmax(0, 1fr); gap: 35px; }
+ .hero-layout .hero-content { grid-row: 1; }
+ .hero-dawn-art { max-width: 430px; }
+ .hero-layout .hero-title { font-size: clamp(2.6rem, 7vw, 4.2rem); }
+}
+@media(prefers-reduced-motion: reduce) { .hero-dawn-art * { animation: none !important; } }

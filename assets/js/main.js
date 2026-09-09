@@ -101,9 +101,67 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 4. Subtle Reveal Animations on Scroll
-  const revealElements = document.querySelectorAll('.fade-up');
-  if ('IntersectionObserver' in window && revealElements.length > 0) {
+  // 4. Smooth Editorial Reveal Animations on Scroll
+  const autoRevealSelectors = [
+    '.fade-up',
+    '.section-header',
+    '.page-header',
+    '.about-heading',
+    '.contact-heading',
+    '.courses-header-wrapper',
+    '.features-header-grid',
+    '.saas-card',
+    '.course-card-v2',
+    '.pricing-card-v2',
+    '.faq-item',
+    '.why-us-card',
+    '.about-story-grid > div',
+    '.about-values article',
+    '.about-arches article',
+    '.about-programs .about-program',
+    '.about-belief .container',
+    '.contact-information',
+    '.contact-form-panel',
+    '.journal-card',
+    '.pre-footer-content'
+  ];
+
+  const elementsToReveal = new Set();
+  autoRevealSelectors.forEach(selector => {
+    document.querySelectorAll(selector).forEach(el => {
+      // Exclude header and elements inside navigation
+      if (!el.closest('.site-header') && !el.closest('.mobile-nav-drawer') && !el.closest('.site-preloader')) {
+        elementsToReveal.add(el);
+      }
+    });
+  });
+
+  const allRevealList = Array.from(elementsToReveal);
+
+  // Group sibling cards to give them delightful staggered delays
+  const parentGroups = new Map();
+  allRevealList.forEach(el => {
+    el.classList.add('fade-up');
+    const parent = el.parentElement;
+    if (parent) {
+      if (!parentGroups.has(parent)) {
+        parentGroups.set(parent, []);
+      }
+      parentGroups.get(parent).push(el);
+    }
+  });
+
+  parentGroups.forEach(siblings => {
+    if (siblings.length > 1) {
+      siblings.forEach((child, idx) => {
+        if (!child.style.transitionDelay) {
+          child.style.transitionDelay = `${(idx % 4) * 0.12}s`;
+        }
+      });
+    }
+  });
+
+  if ('IntersectionObserver' in window && allRevealList.length > 0) {
     const revealObserver = new IntersectionObserver((entries, observer) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -112,13 +170,21 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
     }, {
-      rootMargin: '0px 0px -60px 0px',
-      threshold: 0.1
+      rootMargin: '0px 0px -40px 0px',
+      threshold: 0.08
     });
 
-    revealElements.forEach(el => revealObserver.observe(el));
+    allRevealList.forEach(el => {
+      // If element is already in the viewport on initial load, reveal immediately
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        el.classList.add('in-view');
+      } else {
+        revealObserver.observe(el);
+      }
+    });
   } else {
-    revealElements.forEach(el => el.classList.add('in-view'));
+    allRevealList.forEach(el => el.classList.add('in-view'));
   }
   // Journal: enhance the existing HTML list; no article content is generated.
   const articleList = document.querySelector('#article-list');

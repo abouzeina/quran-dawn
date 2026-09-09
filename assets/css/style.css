@@ -2395,8 +2395,9 @@ ul, ol {
 /* --- 15. Motion & Accessibility --- */
 .fade-up {
   opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.7s var(--ease-editorial), transform 0.7s var(--ease-editorial);
+  transform: translateY(28px);
+  transition: opacity 0.8s var(--ease-editorial), transform 0.8s var(--ease-editorial);
+  will-change: opacity, transform;
 }
 
 .fade-up.in-view {
@@ -2418,5 +2419,6 @@ ul, ol {
     transform: none !important;
   }
 }
+
 /* Keep the cream home navigation legible above the light journal canvas. */
 .blog-page .site-header { background: var(--color-teal); }
