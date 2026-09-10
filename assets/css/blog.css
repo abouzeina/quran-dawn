@@ -264,7 +264,7 @@
 }
 
 .blog-page .journal-filters button:hover {
-    background: var(--color-cream);
+    background: var(--color-white);
 }
 
 .blog-page .journal-filters button[aria-pressed="true"] {

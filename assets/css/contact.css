@@ -82,8 +82,10 @@
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background: var(--color-cream);
+    background: var(--color-white);
     color: var(--color-teal);
+    border: 1px solid var(--border-dark-subtle);
+    box-shadow: 0 4px 14px rgba(2, 52, 63, 0.05);
     flex-shrink: 0;
 }
 
@@ -127,6 +129,13 @@
     margin-bottom: 18px;
 }
 
+.contact-guidance-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+}
+
 .contact-guidance .text-link {
     font-size: 12px;
     margin-right: 22px;
@@ -163,9 +172,16 @@
 
 .contact-form-panel label {
     display: block;
-    font-size: 12px;
-    font-weight: 500;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--color-teal);
     margin-bottom: 8px;
+}
+
+.contact-form-panel label span {
+    color: #e53935;
+    font-weight: 700;
+    margin-left: 2px;
 }
 
 .contact-form-panel input,

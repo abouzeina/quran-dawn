@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="250" viewBox="0 0 300 250" fill="none">
+  <rect x="15" width="285" height="250" rx="14" fill="#F8FAFC"/>
+  <path d="M29 0h271v21H15v-7A14 14 0 0 1 29 0Z" fill="#011F26"/>
+  <g fill="#94A8AD"><circle cx="29" cy="10" r="3"/><circle cx="40" cy="10" r="3"/><circle cx="51" cy="10" r="3"/></g>
+  <rect x="28" y="34" width="260" height="25" rx="6" fill="white" stroke="#DCE4ED"/>
+  <g font-family="Arial, sans-serif" font-size="10" fill="#68809C"><text x="39" y="50">&lt; &gt;</text><text x="62" y="50">Your Quran journey</text></g>
+  <path d="M84 188h112v-64h-28m-26 28h75" stroke="#81999E" stroke-width="1.5" stroke-dasharray="3 3"/>
+  <g fill="#40656D"><rect x="199" y="91" width="62" height="21" rx="10.5"/><rect x="142" y="122" width="55" height="21" rx="10.5"/><rect x="203" y="122" width="60" height="21" rx="10.5"/><rect x="176" y="153" width="65" height="23" rx="11.5"/><rect x="72" y="113" width="87" height="20" rx="10"/></g>
+  <g fill="white" stroke="#DCE4ED"><rect x="2" y="153" width="62" height="23" rx="11.5"/><rect x="72" y="153" width="96" height="23" rx="11.5"/></g>
+  <path d="m85 117 7 6-4 1-1 5Z" fill="white"/>
+  <g font-family="Arial, sans-serif" font-size="8" font-weight="600" text-anchor="middle" fill="white"><text x="230" y="105">Reading</text><text x="169" y="136">Tajweed</text><text x="233" y="136">Practice</text><text x="208" y="168">Memorize</text><text x="124" y="126">Your progress</text></g>
+  <g font-family="Arial, sans-serif" font-size="8" font-weight="600" text-anchor="middle" fill="#3D5A61"><text x="33" y="168">Start here</text><text x="120" y="168">Your Quran journey</text></g>
+</svg>

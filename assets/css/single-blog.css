@@ -252,7 +252,7 @@
 
 .article-share-links a:hover,
 .article-share-links button:hover {
-    background: var(--color-cream);
+    background: var(--color-white);
 }
 
 .share-status {

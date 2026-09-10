@@ -243,17 +243,17 @@ ol {
     transform: translateY(0);
 }
 
-/* Primary Dawn Cream Button */
+/* Primary White Button */
 
 .btn-primary {
-    background-color: var(--color-cream);
+    background-color: var(--color-white);
     color: var(--color-teal);
-    border: 1px solid var(--color-cream);
+    border: 1px solid var(--color-white);
 }
 
 .btn-primary:hover {
-    background-color: var(--color-cream-light);
-    box-shadow: 0 6px 20px rgba(240, 237, 204, 0.35);
+    background-color: var(--color-white);
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.35);
 }
 
 /* Primary Teal Button */
@@ -268,6 +268,20 @@ ol {
     background-color: var(--color-teal-dark);
     color: var(--color-white);
     box-shadow: 0 6px 20px rgba(2, 52, 63, 0.25);
+}
+
+/* Outline Teal Button */
+
+.btn-outline-teal {
+    background-color: var(--color-white);
+    color: var(--color-teal);
+    border: 1px solid var(--color-teal);
+}
+
+.btn-outline-teal:hover {
+    background-color: var(--color-teal);
+    color: var(--color-white);
+    box-shadow: 0 6px 20px rgba(2, 52, 63, 0.18);
 }
 
 /* Ghost / Outline Buttons */
@@ -287,6 +301,22 @@ ol {
     width: 1.1rem;
     height: 1.1rem;
     transition: transform var(--transition-fast);
+}
+
+.action-icon {
+    display: inline-block;
+    width: 1.15em;
+    height: 1.15em;
+    flex-shrink: 0;
+    vertical-align: -0.2em;
+}
+
+.btn-light-pill,
+.btn-cream-pill {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
 }
 
 .btn:hover .btn-icon {
@@ -665,13 +695,10 @@ ol {
     letter-spacing: 0.02em;
 }
 
-.hero-micro-item::before {
-    content: '';
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background-color: var(--color-cream);
-    box-shadow: 0 0 10px rgba(240, 237, 204, 0.6);
+.hero-micro-icon {
+    width: 24px;
+    height: 24px;
+    color: var(--color-cream);
     flex-shrink: 0;
 }
 
@@ -1499,6 +1526,32 @@ ol {
     top: 36%;
 }
 
+.feature-card-image {
+    position: absolute;
+    left: 3%;
+    top: 34%;
+    width: 120%;
+    height: 74%;
+    object-fit: cover;
+    object-position: top left;
+    pointer-events: none;
+}
+
+.saas-card-amber .feature-card-image {
+    top: 35%;
+}
+
+.learning-path-image {
+    position: absolute;
+    left: 15%;
+    top: 36%;
+    width: 105%;
+    height: 74%;
+    object-fit: cover;
+    object-position: top left;
+    pointer-events: none;
+}
+
 .dash-content-grid {
     grid-template-columns: 1.2fr 1fr;
 }
@@ -1527,7 +1580,7 @@ ol {
     cursor: default;
     font-size: 0.5rem;
     color: #02343F;
-    background: #F0EDCC;
+    background: var(--color-white);
 }
 
 .floating-bank-card {
@@ -1900,7 +1953,7 @@ ol {
 }
 
 .course-theme-teal .course-v2-cta-pill:hover {
-    background-color: var(--color-cream);
+    background-color: var(--color-white);
     color: var(--color-teal-dark);
 }
 
@@ -2194,7 +2247,7 @@ ol {
 }
 
 .btn-light-pill {
-    display: block;
+    display: flex;
     width: 100%;
     text-align: center;
     padding: 0.75rem 1rem;
@@ -2288,18 +2341,18 @@ ol {
 }
 
 .btn-cream-pill {
-    display: block;
+    display: flex;
     width: 100%;
     text-align: center;
     padding: 0.8rem 1rem;
     border-radius: 9999px;
-    background-color: var(--color-cream);
+    background-color: var(--color-white);
     border: none;
     color: var(--color-teal);
     font-weight: 700;
     font-size: 0.9rem;
     text-decoration: none;
-    box-shadow: 0 4px 14px rgba(240, 237, 204, 0.35);
+    box-shadow: 0 4px 14px rgba(255, 255, 255, 0.35);
     transition: all var(--transition-fast);
 }
 
@@ -2362,10 +2415,18 @@ ol {
 .faq-list {
     display: flex;
     flex-direction: column;
+    gap: 0.85rem;
 }
 
 .faq-item {
-    border-bottom: 1px solid var(--border-dark-subtle);
+    border: 1px solid var(--border-dark-subtle);
+    border-radius: 16px;
+    background-color: var(--color-white);
+}
+
+.faq-item:has(.faq-trigger[aria-expanded="true"]) {
+    border-color: rgba(2, 52, 63, 0.24);
+    box-shadow: 0 10px 28px rgba(2, 52, 63, 0.08);
 }
 
 .faq-item:first-child {
@@ -2378,16 +2439,28 @@ ol {
     align-items: center;
     justify-content: space-between;
     gap: 1.5rem;
-    padding: 1.75rem 0;
+    padding: 1.4rem clamp(1rem, 3vw, 1.6rem);
+    border-radius: 16px;
+    background-color: var(--color-white);
     text-align: left;
     font-size: var(--text-h4);
     font-weight: 600;
     color: var(--color-teal);
-    transition: color var(--transition-fast);
+    transition: color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.faq-trigger:focus:not(:focus-visible) {
+    outline: none;
+}
+
+.faq-trigger:focus-visible {
+    outline: 2px solid var(--color-teal);
+    outline-offset: 3px;
 }
 
 .faq-trigger:hover {
     color: var(--color-teal-surface);
+    background-color: #F7FAFA;
 }
 
 .faq-icon-wrapper {
@@ -2406,7 +2479,7 @@ ol {
 .faq-trigger[aria-expanded="true"] .faq-icon-wrapper {
     transform: rotate(45deg);
     background-color: var(--color-teal);
-    color: var(--color-cream);
+    color: var(--color-white);
     border-color: var(--color-teal);
 }
 
@@ -2422,10 +2495,25 @@ ol {
 }
 
 .faq-panel-inner {
-    padding-bottom: 1.75rem;
+    padding: 0 clamp(1rem, 3vw, 1.6rem) 1.5rem;
+    transform: translateY(-8px);
+    transition: transform var(--transition-normal);
     font-size: var(--text-body);
     line-height: 1.7;
     color: var(--color-text-dark-muted);
+}
+
+.faq-panel.open .faq-panel-inner {
+    transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .faq-trigger,
+    .faq-icon-wrapper,
+    .faq-panel,
+    .faq-panel-inner {
+        transition: none;
+    }
 }
 
 /* --- 12. Pre-Footer CTA Section --- */
@@ -2575,6 +2663,44 @@ ol {
     height: 1.1rem;
     color: var(--color-cream);
     flex-shrink: 0;
+}
+
+.footer-social-list {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 1.25rem;
+}
+
+.footer-social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background-color: rgba(240, 237, 204, 0.08);
+    border: 1px solid rgba(240, 237, 204, 0.18);
+    color: var(--color-cream);
+    transition: transform var(--transition-fast), background-color var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.footer-social-link:hover {
+    background-color: var(--color-cream);
+    border-color: var(--color-cream);
+    color: var(--color-teal);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.footer-social-link:focus-visible {
+    outline: 2px solid var(--color-cream);
+    outline-offset: 2px;
+}
+
+.footer-social-link svg {
+    width: 17px;
+    height: 17px;
 }
 
 .footer-bottom {
