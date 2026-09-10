@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const menuToggle = document.querySelector('.menu-toggle');
     const navDrawer = document.querySelector('.mobile-nav-drawer');
     const navOverlay = document.querySelector('.mobile-nav-overlay');
+    const closeBtn = document.querySelector('.mobile-nav-close');
     const mobileNavLinks = document.querySelectorAll('.mobile-nav-link, .mobile-nav-footer a');
 
     if (menuToggle && navDrawer && navOverlay) {
@@ -31,6 +32,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         menuToggle.addEventListener('click', () => toggleMenu());
         navOverlay.addEventListener('click', () => toggleMenu(false));
+        if (closeBtn) {
+            closeBtn.addEventListener('click', () => toggleMenu(false));
+        }
 
         mobileNavLinks.forEach(link => {
             link.addEventListener('click', () => toggleMenu(false));

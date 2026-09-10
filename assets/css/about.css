@@ -95,6 +95,13 @@
     margin-bottom: 42px;
 }
 
+.about-heading .btn {
+    min-width: 190px;
+    justify-content: center;
+    text-align: center;
+    flex-shrink: 0;
+}
+
 .about-heading h2,
 .about-approach > h2 {
     font-size: clamp(1.9rem,3.1vw,2.8rem);
@@ -164,8 +171,21 @@
     margin-bottom: 22px;
 }
 
-.about-story-copy .text-link {
-    margin-top: 10px;
+.about-story-copy .btn {
+    margin-top: 14px;
+    min-width: 220px;
+    justify-content: center;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .about-story-copy .btn {
+        width: 100%;
+        max-width: 360px;
+        margin-inline: auto;
+        display: flex;
+        justify-content: center;
+    }
 }
 
 .about-values-band {
@@ -451,6 +471,13 @@
         align-items: flex-start;
         flex-direction: column;
         gap: 24px;
+    }
+
+    .about-heading .btn {
+        width: 100%;
+        max-width: 360px;
+        justify-content: center;
+        margin-inline: auto;
     }
 
     .about-purpose-mark {

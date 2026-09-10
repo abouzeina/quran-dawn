@@ -59,13 +59,34 @@
 .blog-page .journal-hero-actions {
     display: flex;
     flex-wrap: wrap;
-    gap: 12px;
+    align-items: center;
+    gap: 14px;
     margin-top: 26px;
 }
 
 .blog-page .journal-hero-actions .btn {
     font-size: 13px;
-    padding: 12px 20px;
+    padding: 12px 24px;
+    min-width: 190px;
+    justify-content: center;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .blog-page .journal-hero-actions {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin-inline: auto;
+        gap: 12px;
+    }
+
+    .blog-page .journal-hero-actions .btn {
+        width: 100%;
+        max-width: 360px;
+        justify-content: center;
+    }
 }
 
 .blog-page .journal-hero > .hero-horizon-line {

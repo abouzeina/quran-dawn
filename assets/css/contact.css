@@ -136,10 +136,28 @@
     align-items: center;
 }
 
-.contact-guidance .text-link {
-    font-size: 12px;
-    margin-right: 22px;
-    margin-bottom: 12px;
+.contact-guidance-actions .btn {
+    min-width: 190px;
+    padding: 12px 24px;
+    justify-content: center;
+    text-align: center;
+}
+
+@media (max-width: 767px) {
+    .contact-guidance-actions {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin-inline: auto;
+        gap: 12px;
+    }
+
+    .contact-guidance-actions .btn {
+        width: 100%;
+        max-width: 360px;
+        justify-content: center;
+    }
 }
 
 .contact-form-panel {
