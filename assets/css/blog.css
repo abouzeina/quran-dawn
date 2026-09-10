@@ -1,4 +1,4 @@
-﻿/* Journal layout; colors and typography inherit the home design tokens. */
+/* Journal layout; colors and typography inherit the home design tokens. */
 .blog-page { background: var(--color-offwhite); }
 .blog-page main { padding-top: 125px; }
 .blog-page .site-header { background: var(--color-teal); }

@@ -1,4 +1,4 @@
-﻿/* The brand concept: an open Quran becomes the first light of dawn. */
+/* The brand concept: an open Quran becomes the first light of dawn. */
 .hero-section .hero-layout { display: grid; grid-template-columns: minmax(0, .95fr) minmax(0, 1.2fr); align-items: center; gap: clamp(28px, 4vw, 64px); position: relative; z-index: 4; }
 .hero-dawn-art { width: 100%; max-width: 530px; justify-self: center; }
 .hero-dawn-art > svg { width: 100%; height: auto; overflow: visible; }

@@ -1,4 +1,4 @@
-﻿/* Article pages share the journal cards and home design tokens. */
+/* Article pages share the journal cards and home design tokens. */
 .single-page main { padding-top: 100px; }
 .article-entry { display: none; scroll-margin-top: 110px; }
 .article-default { display: block; }

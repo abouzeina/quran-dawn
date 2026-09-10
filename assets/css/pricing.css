@@ -1,4 +1,4 @@
-﻿.pricing-page { background: var(--color-offwhite); }
+.pricing-page { background: var(--color-offwhite); }
 .pricing-page main { padding-top: 100px; }
 .pricing-hero { position: relative; background: var(--color-teal); color: var(--color-cream); overflow: hidden; padding-block: 70px 100px; border-radius: 0 0 50% 6% / 0 0 65px 20px; }
 .pricing-hero > img { position: absolute; right: 0; top: 0; height: 100%; width: 58%; object-fit: cover; }

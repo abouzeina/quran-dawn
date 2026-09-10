@@ -1,4 +1,4 @@
-﻿/* Course pages inherit the home palette and journal layout. */
+/* Course pages inherit the home palette and journal layout. */
 .course-catalog, .course-steps, .course-more { padding-bottom: 64px; scroll-margin-top: 125px; }
 .path-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; }
 .path-card { overflow: hidden; border: 1px solid var(--border-dark-subtle); border-radius: var(--radius-md); background: var(--color-cream-light); display: flex; flex-direction: column; }

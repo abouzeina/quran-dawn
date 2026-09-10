@@ -1,4 +1,4 @@
-﻿(() => {
+(() => {
   const entries = document.querySelector('.course-entries');
   if (!entries) return;
   function updateCourse() {

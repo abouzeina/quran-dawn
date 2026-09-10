@@ -1,4 +1,4 @@
-﻿.contact-page main { padding-top: 100px; }
+.contact-page main { padding-top: 100px; }
 .contact-heading { padding-block: 34px 48px; background: var(--color-cream-light); border-bottom: 1px solid var(--border-dark-subtle); }
 .contact-breadcrumb { display: flex; gap: 12px; font-size: 12px; color: var(--color-text-dark-muted); margin-bottom: 30px; }
 .contact-breadcrumb a:hover { text-decoration: underline; }
